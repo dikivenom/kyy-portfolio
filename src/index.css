@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Lilita+One&family=Reggae+One&family=RocknRoll+One&family=Special+Gothic+Expanded+One&display=swap');
+
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+
+
+@theme {
+  --font-rocknroll-one: 'RocknRoll One', sans-serif;
+  --font-dothgothic: 'DotGothic16', sans-serif;
+  --font-reggae-one: 'Reggae One', sans-serif;
+  --font-lilita: 'Lilita', sans-serif;
+  --font-gothicexpanded: 'Special Gothic Expanded One', sans-serif;
+  --font-caveat-brush: 'Caveat Brush', sans-serif;
+}
+:root {
+  --background: oklch(93.46% 0.0305 255.11);
+  --secondary-background: oklch(100% 0 0);
+  --foreground: oklch(0% 0 0);
+  --main-foreground: oklch(0% 0 0);
+  --main: oklch(67.47% 0.1726 259.49);
+  --border: oklch(0% 0 0);
+  --ring: oklch(0% 0 0);
+  --overlay: oklch(0% 0 0 / 0.8);
+  --shadow: 4px 4px 0px 0px var(--border);
+  --chart-1: #5294ff;
+  --chart-2: #ff4d50;
+  --chart-3: #facc00;
+  --chart-4: #05e17a;
+  --chart-5: #7a83ff;
+  --chart-active-dot: #000;
+}
+
+.dark {
+  --background: oklch(29.23% 0.0626 270.49);
+  --secondary-background: oklch(23.93% 0 0);
+  --foreground: oklch(92.49% 0 0);
+  --main-foreground: oklch(0% 0 0);
+  --main: oklch(67.47% 0.1726 259.49);
+  --border: oklch(0% 0 0);
+  --ring: oklch(100% 0 0);
+  --shadow: 4px 4px 0px 0px var(--border);
+  --chart-1: #5294ff;
+  --chart-2: #ff6669;
+  --chart-3: #e0b700;
+  --chart-4: #04c86d;
+  --chart-5: #7a83ff;
+  --chart-active-dot: #fff;
+}
+
+@theme inline {
+  --color-main: var(--main);
+  --color-background: var(--background);
+  --color-secondary-background: var(--secondary-background);
+  --color-foreground: var(--foreground);
+  --color-main-foreground: var(--main-foreground);
+  --color-border: var(--border);
+  --color-overlay: var(--overlay);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --spacing-boxShadowX: 4px;
+  --spacing-boxShadowY: 4px;
+  --spacing-reverseBoxShadowX: -4px;
+  --spacing-reverseBoxShadowY: -4px;
+  --radius-base: 5px;
+  --shadow-shadow: var(--shadow);
+  --font-weight-base: 500;
+  --font-weight-heading: 700;
+
+  --animate-marquee: marquee 10s linear infinite;
+  --animate-marquee2: marquee2 10s linear infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes marquee2 {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+
+  html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+  /* corner shadow (normal) */
+  .shadow-corner {
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.6);
+  }
+
+  /* corner shadow when pressed (looks like it's pushed in) */
+  .shadow-corner-pressed {
+    box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.6);
+  }
+
+  /* base "neu" style */
+  .neu {
+    @apply mb-[4px] mr-[4px] border-4;
+    border-color: #000000;
+    box-shadow: 4.5px 4.5px 0 0 rgba(0, 0, 0, 0.85); /* shadow sisi kanan+bawah */
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    will-change: transform;
+  }
+
+  /* pressed-state (dipakai oleh :active dan focus-visible) */
+  .neu-pressed {
+    transform: translate(2.5px, 2.5px);
+    box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.6);
+  }
+  .neu:hover {
+    transform: translate(2.5px, 2.5px);
+    box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.6);
+  }
+  /* pseudo-state rules: saat element dengan class .neu-active ditekan -> terapkan efek pressed */
+  .neu-active:active {
+    transform: translate(2.5px, 2.5px);
+    box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.6);
+  }
+
+  /* fokus keyboard */
+  .neu-focus:focus-visible {
+    transform: translate(2.5px, 2.5px);
+    box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.6);
+    outline: none;
+  }
+
+  .text-stroke-neu {
+    -webkit-text-stroke: 1px black;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.85);
+    transition: transform 0.12s ease, text-shadow 0.12s ease;
+    will-change: transform;
+  }
+
+  @media (max-width: 400px) {
+    .text-stroke-neu {
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.85);
+    }
+  }
+
+  .text-stroke-neu:hover {
+    transform: translate(2.5px, 2.5px);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.6);
+  }
+}
