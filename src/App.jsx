@@ -17,26 +17,24 @@ import { usePowerTv } from './hooks/usePowerTv';
 import { useTrafficLight } from './hooks/useTrafficLight';
 import { useTypingEffect } from './hooks/useTypingEffect';
 
-/* -----------------------
-   Import assets (cara B)
-   ----------------------- */
-const BG = new URL('./assets/background-graph-cyan.png', import.meta.url).href;
-const X_BUTTON = new URL('./assets/X-button.png', import.meta.url).href;
-const MENU_BUTTON = new URL('./assets/Menu_Button.png', import.meta.url).href;
-const DOODLE_MOUSE = new URL('./assets/doodle-mouse.png', import.meta.url).href;
+
+const BG = new URL('./assets/backgrounds/background-graph-cyan.png', import.meta.url).href;
+const X_BUTTON = new URL('./assets/buttons/x-button.png', import.meta.url).href;
+const MENU_BUTTON = new URL('./assets/buttons/menu-button.png', import.meta.url).href;
+const DOODLE_MOUSE = new URL('./assets/characters/doodle-mouse.png', import.meta.url).href;
 
 const ICON_INSTAGRAM = new URL('./assets/icons/icons8-instagram.png', import.meta.url).href;
 const ICON_GITHUB = new URL('./assets/icons/icons8-github-squared.png', import.meta.url).href;
 const ICON_LINKEDIN = new URL('./assets/icons/icons8-linkedin.png', import.meta.url).href;
 
-const TV_RAINBOW = new URL('./assets/wallpaper-tv-rainbow.gif', import.meta.url).href;
-const TV_TURN_OFF = new URL('./assets/tv-turn-off.gif', import.meta.url).href;
+const TV_RAINBOW = new URL('./assets/backgrounds/wallpaper-tv-rainbow.gif', import.meta.url).href;
+const TV_TURN_OFF = new URL('./assets/backgrounds/tv-turn-off.gif', import.meta.url).href;
 
 export default function App() {
   // hooks
   const { open, selected, handleOpen, handleSelected } = useMenuState(true, 'HOME');
 
-  // pass rainbow & turnOff gif urls to hook (hook should accept options)
+
   const { tvSrc, isTurningOff, handlePowerClick } = usePowerTv({
     rainbowGif: TV_RAINBOW,
     turnOffGif: TV_TURN_OFF,
@@ -53,22 +51,25 @@ export default function App() {
   const displayedText = useTypingEffect();
 
   return (
-    // gunakan inline style untuk background agar menggunakan URL hasil import
+ 
     <div
       className="bg-cover bg-center bg-fixed w-full mt-0"
       style={{ backgroundImage: `url(${BG})` }}
     >
-      <nav onClick={handleOpen}>
-        <div className="pt-4">
-          <img
-            src={open ? X_BUTTON : MENU_BUTTON}
-            alt={open ? 'close' : 'menu'}
-            className="neu neu-active neu-focus w-[52px] ml-3.5 lg:w-14 lg:ml-6.5"
-          />
-        </div>
-      </nav>
+      <nav>
+  <div className="pt-4 inline-block">
+    <button onClick={handleOpen} className="focus:outline-none">
+      <img
+        src={open ? X_BUTTON : MENU_BUTTON}
+        alt={open ? 'close' : 'menu'}
+        className="neu neu-active neu-focus w-[52px] ml-3.5 lg:w-14 lg:ml-6.5"
+      />
+    </button>
+  </div>
+</nav>
 
-      <main className="flex gap-x-3 w-[95%]  items-center justify-self-center mt-10 mx-4 md:w-full lg:mt-7 lg:w-full lg:justify-evenly">
+
+      <main className="flex gap-x-3 w-[95%]  items-center justify-self-center mt-10 mx-4 md:w-[95%] lg:mt-7 lg:w-full lg:justify-evenly">
         <AnimatePresence>
           {open && (
             <motion.aside
@@ -78,10 +79,10 @@ export default function App() {
               transition={{ type: 'spring', stiffness: 120, damping: 20, bounce: 1 }}
               whileHover={{ x: 2.5, y: 2.5, transition: { duration: 0.15, ease: 'easeOut' } }}
               whileTap={{ x: 0, y: 0, transition: { duration: 0.2, ease: 'easeIn' } }}
-              className="bg-[#FFFF00] w-[19%] h-114 sm:w-40 sm:h-125 md:h-140 lg:w-[15%] lg:h-120 neu neu-active neu-focus border-black rounded-4xl"
+              className="bg-[#FFFF00] w-[19%] h-114 sm:w-40 sm:h-132 md:h-140 lg:w-[15%] lg:h-120 neu neu-active neu-focus border-black rounded-4xl"
             >
               <div className="flex justify-center items-center align-middle">
-                <img src={DOODLE_MOUSE} className="w-auto pt-3 lg:w-[60%]" alt="doodle-monitor" />
+                <img src={DOODLE_MOUSE} className="w-auto pt-3 sm:w-[60%]  lg:w-[60%]" alt="doodle-monitor" />
               </div>
               <hr className="border-2 border-black my-4" />
 
@@ -178,17 +179,17 @@ export default function App() {
               </h1>
 
               <h1 className="font-caveat-brush bg-blue-300 rotate-6 lg:rotate-0 px-3 py-1 neu text-[#FAFAFA] text-sm font-[1000px] sm:text-xl md:text-3xl lg:text-3xl text-stroke-neu tracking-widest">
-                DEVELOPER PEMULA
+                FRONT-END DEV
               </h1>
             </div>
           </div>
 
           <div id="icon-sosmed" className="flex items-center justify-center bg-white border-y-4 border-black mt-10 w-full h-12 sm:mt-20 [@media(max-width:370px)]:mt-9  lg:mt-4">
             <ul className="flex items-center justify-center gap-6">
-              <li><img src={ICON_INSTAGRAM} className="w-10 h-auto text-stroke-neu" alt="instagram" /></li>
-              <li><img src={ICON_GITHUB} className="w-10 h-auto text-stroke-neu" alt="github" /></li>
-              <li><img src={ICON_LINKEDIN} className="w-10 h-auto text-stroke-neu" alt="linkedin" /></li>
-              <li><img src={ICON_INSTAGRAM} className="w-10 h-auto text-stroke-neu" alt="instagram" /></li>
+              <li><img src={ICON_INSTAGRAM} className="w-10 h-auto" alt="instagram" /></li>
+              <li><img src={ICON_GITHUB} className="w-10 h-auto " alt="github" /></li>
+              <li><img src={ICON_LINKEDIN} className="w-10 h-auto " alt="linkedin" /></li>
+              <li><img src={ICON_INSTAGRAM} className="w-10 h-auto " alt="instagram" /></li>
             </ul>
           </div>
         </motion.aside>

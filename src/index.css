@@ -103,6 +103,20 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Disable block/select text */
+* {
+  user-select: none; 
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Disable drag image */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
 }
 
 @layer utilities {

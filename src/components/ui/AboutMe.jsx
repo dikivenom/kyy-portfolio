@@ -4,9 +4,12 @@ import { useInView } from "react-intersection-observer";
 import ProfileCard from "./ProfileCard";
 import useScrollText from "../../hooks/useScrollText";
 
+const WHITE_PAPER_BG = new URL('../../assets/backgrounds/white-paper-texture.jpg', import.meta.url).href;
+// const PURPLE_POPART_BG = new URL('../../assets/backgrounds/bg-purple-popart.png', import.meta.url).href;
+
 export default function AboutMe() {
   const { ref, inView, entry } = useInView({
-    threshold: Array.from({ length: 100 }, (_, i) => i / 100), 
+    threshold: Array.from({ length: 100 }, (_, i) => i / 100),
   });
 
   const fullText = `Halo, perkenalkan nama saya Dicky Ramadhan, saya seorang Mahasiswa
@@ -18,11 +21,10 @@ antarmuka, serta pengelolaan data. Selain itu, saya juga senang
 mempelajari hal-hal baru, berdiskusi, dan berbagi pengetahuan dengan
 orang lain untuk mengembangkan wawasan bersama.`;
 
-
-  const displayedText = useScrollText(entry, fullText); 
+  const displayedText = useScrollText(entry, fullText);
 
   return (
-    <section className="w-full h-200 bg-[#9810fa] flex flex-col items-center">
+    <section className="w-full h-200 bg-[#9810fa] flex flex-col items-center md:flex-row md:items-baseline md:justify-evenly lg:flex-row lg:items-baseline lg:justify-evenly">
       <ProfileCard />
 
       <motion.article
@@ -30,13 +32,14 @@ orang lain untuk mengembangkan wawasan bersama.`;
         initial={{ rotate: -2, x: 0 }}
         animate={{ rotate: [-2, 2, -2], x: [-5, 5, -5] }}
         transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-        className="relative bg-[url('src/assets/background/white-paper-texture.jpg')] bg-center bg-no-repeat mt-8 neu bg-cover w-[90%] h-[40%] sm:w-[95%] shadow-lg"
+        className="relative bg-center bg-no-repeat mt-8 neu bg-cover w-[90%] h-[45%] sm:w-[95%] md:w-[50%] md:h-[60%] lg:w-[60%] lg:h-[50%] shadow-lg"
+        style={{ backgroundImage: `url(${WHITE_PAPER_BG})` }}
       >
         {/* Tali kecil */}
-        <div className="absolute top-0 -translate-y-full left-1/2 transform -translate-x-1/2 w-1 h-10 bg-black"></div>
+        <div className="absolute top-0 -translate-y-full left-1/2 transform -translate-x-1/2 w-1 h-10 bg-black md:hidden"></div>
 
         <div className="w-full break-words">
-          <h4 className="font-caveat-brush p-2 text-sm sm:text-xl md:text-2xl leading-relaxed break-words">
+          <h4 className="font-caveat-brush p-2 text-md sm:text-xl md:text-2xl md:px-3 leading-relaxed break-words">
             {displayedText}
             <motion.span
               animate={{ opacity: [0, 1, 0] }}
