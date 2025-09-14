@@ -17,9 +17,9 @@ const ICON_JS = new URL("../../assets/icons/icons8-javascript.png", import.meta.
   const repeated = [...techIcons, ...techIcons, ...techIcons, ...techIcons, ...techIcons];
 
   return (
-    <div className="relative w-full overflow-hidden border-y-5 mt-5 border-border bg-secondary-background">
+    <div className="relative w-full overflow-hidden border-y-5  border-border bg-secondary-background">
       {/* Track pertama */}
-      <div className="animate-marquee flex flex-nowrap gap-4 sm:gap-8 md:gap-12 w-max py-1 sm:py-2">
+      <div className="animate-marquee flex flex-nowrap gap-y-4 gap-x-10 sm:gap-8 md:gap-12 w-max py-1 sm:py-2">
         {repeated.map((icon, i) => (
           <img
             key={`m1-${i}`}
@@ -31,7 +31,7 @@ const ICON_JS = new URL("../../assets/icons/icons8-javascript.png", import.meta.
       </div>
 
       {/* Track kedua */}
-      <div className="absolute top-0 animate-marquee2 flex flex-nowrap gap-4 sm:gap-8 md:gap-12 w-max py-1 sm:py-2">
+      <div className="absolute top-0 animate-marquee2 flex flex-nowrap gap-y-4 gap-x-10 sm:gap-8 md:gap-12 w-max py-1 sm:py-2">
         {repeated.map((icon, i) => (
           <img
             key={`m2-${i}`}

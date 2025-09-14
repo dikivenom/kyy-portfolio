@@ -1,5 +1,5 @@
 export default function ProfileCard() {
-  // Import asset dengan cara B
+  
   const BG_POLKADOT = new URL('../../assets/backgrounds/bg-white-polkadot.png', import.meta.url).href;
   const CHAR_DICKY  = new URL('../../assets/characters/karakter-dicky.png', import.meta.url).href;
 
@@ -21,7 +21,7 @@ export default function ProfileCard() {
         />
       </div>
 
-      {/* Bar hitam menempel kiri–kanan & di bawah */}
+     
       <div className="absolute left-0 right-0 bottom-0 bg-black">
         <h2 className="text-white px-4 py-2 font-black font-gothicexpanded bg-[#01b2b0] border-t-4 tracking-widest">
           DICKY RAMADHAN
