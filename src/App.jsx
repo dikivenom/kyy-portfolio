@@ -16,11 +16,11 @@ import Projects from './components/ui/Projects';
 
 // assets used by App (TV gifs + background)
 const BG_CYAN = new URL(
-  './assets/backgrounds/background-graph-cyan.png',
+  '/assets/backgrounds/background-graph-cyan.png',
   import.meta.url
 ).href;
 const TV_RAINBOW = new URL(
-  './assets/backgrounds/wallpaper-tv-rainbow.gif',
+  '/assets/backgrounds/wallpaper-tv-rainbow.gif',
   import.meta.url
 ).href;
 const TV_TURN_OFF = new URL(
