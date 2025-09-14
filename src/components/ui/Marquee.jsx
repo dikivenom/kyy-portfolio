@@ -1,10 +1,11 @@
 export default function Marquee() {
   // Import aset dengan cara B (path relatif terhadap file ini: src/components/ui/Marquee.jsx)
-  const ICON_TAILWIND  = new URL('../../assets/icons/icons8-tailwind-css.png', import.meta.url).href;
-  const ICON_REACT     = new URL('../../assets/icons/icons8-react.png', import.meta.url).href;
-const ICON_JS = new URL("../../assets/icons/icons8-javascript.png", import.meta.url).href;
-  const ICON_PHP       = new URL('../../assets/icons/icons8-php.png', import.meta.url).href;
-  const ICON_LARAVEL   = new URL('../../assets/icons/icons8-laravel.png', import.meta.url).href;
+const ICON_TAILWIND = "/kyy-portfolio/assets/icons/icons8-tailwind-css.png";
+const ICON_REACT    = "/kyy-portfolio/assets/icons/icons8-react.png";
+const ICON_JS       = "/kyy-portfolio/assets/icons/icons8-javascript.png";
+const ICON_PHP      = "/kyy-portfolio/assets/icons/icons8-php.png";
+const ICON_LARAVEL  = "/kyy-portfolio/assets/icons/icons8-laravel.png";
+
 
   const techIcons = [
     { src: ICON_TAILWIND,  alt: 'tailwind-icon' },

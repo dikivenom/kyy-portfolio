@@ -1,6 +1,6 @@
-const X_BUTTON = new URL('../../assets/buttons/x-button.png', import.meta.url).href;
-const MENU_BUTTON = new URL('../../assets/buttons/menu-button.png', import.meta.url)
-  .href;
+const X_BUTTON    = "/kyy-portfolio/assets/buttons/x-button.png";
+const MENU_BUTTON = "/kyy-portfolio/assets/buttons/menu-button.png";
+
 
 export default function MenuButton({ open, onToggle }) {
   return (

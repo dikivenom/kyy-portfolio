@@ -1,6 +1,7 @@
-const ICON_INSTAGRAM = new URL('../../assets/icons/icons8-instagram.png', import.meta.url).href;
-const ICON_GITHUB = new URL('../../assets/icons/icons8-github-squared.png', import.meta.url).href;
-const ICON_LINKEDIN = new URL('../../assets/icons/icons8-linkedin.png', import.meta.url).href;
+const ICON_INSTAGRAM = "/kyy-portfolio/assets/icons/icons8-instagram.png";
+const ICON_GITHUB    = "/kyy-portfolio/assets/icons/icons8-github-squared.png";
+const ICON_LINKEDIN  = "/kyy-portfolio/assets/icons/icons8-linkedin.png";
+
 
 export default function SocialIcons() {
   return (

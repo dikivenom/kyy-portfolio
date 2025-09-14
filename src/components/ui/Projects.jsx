@@ -1,10 +1,8 @@
 import CarouselNetwork from './CarouselNetwork';
 import CarouselWebdev from './CarouselWebdev';
 
-const BG_PINK_GREEN = new URL(
-  '../../assets/backgrounds/flagrace_pink_green.png',
-  import.meta.url
-).href;
+const BG_PINK_GREEN = "/kyy-portfolio/assets/backgrounds/flagrace_pink_green.png";
+
 
 export default function Projects() {
   return (
@@ -20,7 +18,7 @@ export default function Projects() {
         {/* Background ungu */}
         <rect width='100%' height='160' fill='#9810fa' />
 
-        {/* Zigzag kuning dengan outline hitam hanya di atas */}
+        
         <path
           d='
             M0,80
@@ -77,27 +75,27 @@ export default function Projects() {
           strokeLinecap='square'
         />
       </svg>
-     
-        <header className='grid grid-cols-3 mb-6 mt-10 items-center w-[90%] bg-[#38b042] mx-auto border-4 border-black '>
-          <img
-            src={BG_PINK_GREEN}
-            alt=''
-            className='w-19 h-full sm:w-24 justify-self-start border-r-2'
-          />
-          <h1 className='text-2xl font-bold text-center text-[#f591bf] text-stroke-neu font-gothicexpanded'>
-           Projects
-          </h1>
-          <img
-            src={BG_PINK_GREEN}
-            alt=''
-            className='w-19 h-full sm:w-24 justify-self-end border-l-2 '
-          />
-        </header>
-    
-       <div id='carousel-projects' className='mt-22'>
+
+      <header className='grid grid-cols-3 mb-6 mt-10 items-center w-[90%] bg-[#38b042] mx-auto border-4 border-black '>
+        <img
+          src={BG_PINK_GREEN}
+          alt=''
+          className='w-19 h-full sm:w-24 justify-self-start border-r-2'
+        />
+        <h1 className='text-2xl font-bold text-center text-[#f591bf] text-stroke-neu font-gothicexpanded'>
+          Projects
+        </h1>
+        <img
+          src={BG_PINK_GREEN}
+          alt=''
+          className='w-19 h-full sm:w-24 justify-self-end border-l-2 '
+        />
+      </header>
+
+      <div id='carousel-projects' className='mt-22'>
         <CarouselNetwork />
         <CarouselWebdev />
-          </div>
+      </div>
     </section>
   );
 }

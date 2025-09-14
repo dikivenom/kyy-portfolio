@@ -14,20 +14,10 @@ import { usePowerTv } from './hooks/usePowerTv';
 import SocialIcons from './components/ui/SocialIcons';
 import Projects from './components/ui/Projects';
 
-
-const BG_CYAN = new URL(
-  '././assets/backgrounds/background-graph-cyan.png',
-  import.meta.url
-).href;
-const TV_RAINBOW = new URL(
-  './assets/backgrounds/wallpaper-tv-rainbow.gif',
-  import.meta.url
-).href;
-const TV_TURN_OFF = new URL(
-  './assets/backgrounds/tv-turn-off.gif',
-  import.meta.url
-).href;
-
+// assets used by App (TV gifs + background)
+const BG_CYAN = "/kyy-portfolio/assets/backgrounds/background-graph-cyan.png";
+  const TV_RAINBOW = "/kyy-portfolio/assets/backgrounds/wallpaper-tv-rainbow.gif";
+  const TV_TURN_OFF = "/kyy-portfolio/assets/backgrounds/tv-turn-off.gif";
 export default function App() {
   
   const { open, selected, handleOpen, handleSelected } = useMenuState(

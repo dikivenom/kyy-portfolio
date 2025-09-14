@@ -1,8 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-const DOODLE_MOUSE = new URL(
-  '../../assets/characters/doodle-mouse.png',
-  import.meta.url
-).href;
+const DOODLE_MOUSE = "/kyy-portfolio/assets/characters/doodle-mouse.png"
 
 import {
   faHouse,

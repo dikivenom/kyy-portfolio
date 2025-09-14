@@ -7,12 +7,12 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 
-import VLAN_IMG from '../../assets/topologi/topologi-vlan.png';
-import IN_VLAN_IMG from '../../assets/topologi/topologi-inter-vlan.png';
-import STATIC_IMG from '../../assets/topologi/topologi-static-routing.png';
-import DYNAMIC_IMG from '../../assets/topologi/topologi-dynamic-routing-ospf.png';
+const VLAN_IMG    = "/kyy-portfolio/assets/topologi/topologi-vlan.png";
+const IN_VLAN_IMG = "/kyy-portfolio/assets/topologi/topologi-inter-vlan.png";
+const STATIC_IMG  = "/kyy-portfolio/assets/topologi/topologi-static-routing.png";
+const DYNAMIC_IMG = "/kyy-portfolio/assets/topologi/topologi-dynamic-routing-ospf.png";
 
-// ubah jadi array objek dengan title sesuai gambar
+
 const IMAGES = [
   { src: VLAN_IMG, detail: 'Switching', title: 'VLAN CONFIGURATION' },
   { src: IN_VLAN_IMG, detail: 'Switching', title: 'INTER VLAN ROUTING' },

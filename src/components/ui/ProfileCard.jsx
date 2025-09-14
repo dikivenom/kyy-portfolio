@@ -1,7 +1,7 @@
 export default function ProfileCard() {
   
-  const BG_POLKADOT = new URL('../../assets/backgrounds/bg-white-polkadot.png', import.meta.url).href;
-  const CHAR_DICKY  = new URL('../../assets/characters/karakter-dicky.png', import.meta.url).href;
+const BG_POLKADOT = "/kyy-portfolio/assets/backgrounds/bg-white-polkadot.png";
+const CHAR_DICKY = "/kyy-portfolio/assets/characters/karakter-dicky.png";
 
   return (
     <div

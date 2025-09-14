@@ -4,10 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import ProfileCard from './ProfileCard';
 import useScrollText from '../../hooks/useScrollText';
 
-const WHITE_PAPER_BG = new URL(
-  '../../assets/backgrounds/white-paper-texture.jpg',
-  import.meta.url
-).href;
+const WHITE_PAPER_BG = "/kyy-portfolio/assets/backgrounds/white-paper-texture.jpg";
 
 export default function AboutMe() {
   const { ref, inView, entry } = useInView({
