@@ -25,9 +25,9 @@ export default function TVPanel({ tvSrc }) {
         ) : null}
       </div>
 
-      <div className='mt-6 gap-y-4 sm:mt-9 lg:mt-5 flex flex-col items-center'>
+      <div className='mt-6 gap-y-4 sm:mt-9 lg:mt-0 lg:gap-y-1 flex flex-col items-center'>
         <h1
-          className={`font-gothicexpanded text-white text-lg mx-2 font-black sm:text-3xl md:text-3xl lg:text-4xl text-stroke-neu min-h-[2rem] sm:min-h-[2.5rem] flex items-center justify-center`}
+          className={`font-gothicexpanded text-white text-lg text-stroke-neu mx-2 font-black sm:text-3xl md:text-3xl lg:text-4xl lg:mt-5  min-h-[2rem] sm:min-h-[2.5rem] flex items-center justify-center`}
         >
           <Typewriter />
         </h1>
@@ -36,11 +36,11 @@ export default function TVPanel({ tvSrc }) {
             wrapper punya perspective untuk 3D; tetap gunakan rotate-6 pada layar kecil
             dan lg:rotate-0 untuk memastikan tidak dimiringkan di layar besar */}
         <h1
-          className='font-caveat-brush bg-blue-300 w-40 text-center rotate-6 md:w-77 md:rotate-0 md:mt-8 lg:w-80 lg:rotate-0 px-3 py-1 neu text-[#FAFAFA] text-sm font-[1000px] sm:text-xl md:text-3xl lg:text-3xl text-stroke-neu tracking-widest'
+          className='font-caveat-brush bg-blue-300 w-40 text-center rotate-6 md:w-77 md:rotate-0 md:mt-8 lg:w-80 lg:rotate-0 px-3 py-1 neu text-[#FAFAFA] text-sm font-[1000px] sm:text-xl md:text-3xl lg:text-3xl lg:mt-4 text-stroke-neu tracking-widest'
           style={{ perspective: 900 }}
           aria-live='polite'
         >
-          <AnimatePresence mode='wait'>
+          <AnimatePresence mode='wait' >
             <motion.span
               key={texts[index]}
               initial={{ rotateX: -90, opacity: 0 }}

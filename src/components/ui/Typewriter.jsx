@@ -44,7 +44,7 @@ export default function Typewriter({
             aria-hidden='true'
             variants={child}
             key={`${index}-${i}`}
-            className='whitespace-pre'
+            className='whitespace-pre '
           >
             {ch}
           </motion.span>

@@ -8,13 +8,11 @@ import TopBar from './components/ui/TopBar';
 import TVPanel from './components/ui/TVPanel';
 
 
-// hooks
 import { useMenuState } from './hooks/useMenuState';
 import { usePowerTv } from './hooks/usePowerTv';
 import SocialIcons from './components/ui/SocialIcons';
 import Projects from './components/ui/Projects';
 
-// assets used by App (TV gifs + background)
 const BG_CYAN = "/kyy-portfolio/assets/backgrounds/background-graph-cyan.png";
   const TV_RAINBOW = "/kyy-portfolio/assets/backgrounds/wallpaper-tv-rainbow.gif";
   const TV_TURN_OFF = "/kyy-portfolio/assets/backgrounds/tv-turn-off.gif";
@@ -58,13 +56,10 @@ export default function App() {
             }}
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            {/* Top bar: traffic lights + power button */}
             <TopBar onPowerClick={handlePowerClick} />
 
-            {/* TV, typewriter and titles */}
             <TVPanel tvSrc={tvSrc} />
 
-            {/* social icons */}
             <SocialIcons />
           </motion.aside>
         </main>
