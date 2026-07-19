@@ -1,14 +1,17 @@
 import { motion, AnimatePresence } from 'framer-motion';
 const DOODLE_MOUSE = "/kyy-portfolio/assets/characters/doodle-mouse.png"
 
-import {
-  faHouse,
-  faUser,
-  faFolder,
-  faLightbulb,
-  faLaptopCode,
-} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faDiagramProject,
+  faAddressCard,
+  faAward,
+  faCogs,
+  faPhoneAlt
+} from '@fortawesome/free-solid-svg-icons';
+
+
+
 export default function SidebarMenu({ open, selected, onSelect }) {
   return (
     <AnimatePresence>
@@ -27,11 +30,14 @@ export default function SidebarMenu({ open, selected, onSelect }) {
             damping: 20,
             bounce: 1,
           }}
+
+  
          
-          className='bg-[#FFFF00] w-[19%] h-114 sm:w-40 sm:h-132 md:h-140 lg:w-[15%] lg:h-120 neu neu-active neu-focus border-black rounded-4xl'
+          className='bg-[#EDC45A] w-[19%] h-114 sm:w-40 sm:h-132 md:h-140 lg:w-[15%] lg:h-120 neu neu-focus border-black rounded-4xl'
         >
           <div className='flex justify-center items-center align-middle'>
             <img
+            
               src={DOODLE_MOUSE}
               className='w-auto pt-3 sm:w-[60%]  lg:w-[60%]'
               alt='doodle-monitor'
@@ -39,37 +45,19 @@ export default function SidebarMenu({ open, selected, onSelect }) {
           </div>
           <hr className='border-2 border-black my-4' />
 
-          <ul className='font-rocknroll-one justify-self-center w-full items-center flex flex-col gap-y-7 mt-4 md:mt-8 sm:gap-y-4 '>
+          <ul className='font-big-shoulders  md:text-stroke-neu font-bold justify-self-center w-full items-center flex flex-col gap-y-6 mt-4 md:mt-8 sm:gap-y-4 lg:mt-5'>
             <li>
-              <span className='block sm:hidden'>
+              <span className='block sm:hidden' onClick={() => onSelect('ABOUT ME')}>
                 <FontAwesomeIcon
-                  icon={faHouse}
+                  icon={faAddressCard}
                   size='xl'
                   className=' bg-white p-[2px] neu neu-active neu-focus rounded-sm'
                 />
               </span>
               <span
-                onClick={() => onSelect('HOME')}
-                className={`hidden w-full sm:block cursor-pointer p-2 rounded ${
-                  selected === 'HOME' ? ' bg-white neu my-1' : ''
-                }`}
-              >
-                HOME
-              </span>
-            </li>
-
-            <li>
-              <span className='block sm:hidden'>
-                <FontAwesomeIcon
-                  icon={faUser}
-                  size='lg'
-                  className='bg-white p-[2px] neu neu-active neu-focus rounded-sm'
-                />
-              </span>
-              <span
                 onClick={() => onSelect('ABOUT ME')}
-                className={`hidden sm:block cursor-pointer p-2 rounded ${
-                  selected === 'ABOUT ME' ? 'w-full bg-white neu my-1' : ''
+                className={`hidden w-full sm:block cursor-pointer p-2 rounded ${
+                  selected === 'ABOUT ME' ? ' bg-white neu my-1' : ''
                 }`}
               >
                 ABOUT ME
@@ -77,9 +65,9 @@ export default function SidebarMenu({ open, selected, onSelect }) {
             </li>
 
             <li>
-              <span className='block sm:hidden'>
+              <span className='block sm:hidden' onClick={() => onSelect('PROJECT')}>
                 <FontAwesomeIcon
-                  icon={faFolder}
+                  icon={faDiagramProject}
                   size='lg'
                   className='bg-white p-[2px] neu neu-active neu-focus rounded-sm'
                 />
@@ -87,7 +75,7 @@ export default function SidebarMenu({ open, selected, onSelect }) {
               <span
                 onClick={() => onSelect('PROJECT')}
                 className={`hidden sm:block cursor-pointer p-2 rounded ${
-                  selected === 'PROJECT' ? 'bg-white neu my-1' : ''
+                  selected === 'PROJECT' ? 'w-full bg-white neu my-1' : ''
                 }`}
               >
                 PROJECT
@@ -95,27 +83,45 @@ export default function SidebarMenu({ open, selected, onSelect }) {
             </li>
 
             <li>
-              <span className='block sm:hidden'>
+              <span className='block sm:hidden' onClick={() => onSelect('SKILLS')}>
                 <FontAwesomeIcon
-                  icon={faLightbulb}
+                  icon={faCogs}
                   size='lg'
                   className='bg-white p-[2px] neu neu-active neu-focus rounded-sm'
                 />
               </span>
               <span
-                onClick={() => onSelect('TECH-STACK')}
+                onClick={() => onSelect('SKILLS')}
                 className={`hidden sm:block cursor-pointer p-2 rounded ${
-                  selected === 'TECH-STACK' ? 'bg-white neu my-1' : ''
+                  selected === 'SKILLS' ? 'bg-white neu my-1' : ''
                 }`}
               >
-                TECH-STACK
+                SKILLS
               </span>
             </li>
 
             <li>
-              <span className='block sm:hidden'>
+              <span className='block sm:hidden' onClick={() => onSelect('CERTIFICATE')}>
                 <FontAwesomeIcon
-                  icon={faLaptopCode}
+                  icon={faAward} 
+                  size='lg'
+                  className='bg-white p-[2px] neu neu-active neu-focus rounded-sm'
+                />
+              </span>
+              <span
+                onClick={() => onSelect('CERTIFICATE')}
+                className={`hidden sm:block cursor-pointer p-2 rounded ${
+                  selected === 'CERTIFICATE' ? 'bg-white neu my-1' : ''
+                }`}
+              >
+                CERTIFICATE
+              </span>
+            </li>
+
+            <li>
+              <span className='block sm:hidden' onClick={() => onSelect('CONTACT')}>
+                <FontAwesomeIcon
+                  icon={faPhoneAlt}
                   size='lg'
                   className='bg-white p-[2px] neu neu-active neu-focus rounded-sm'
                 />
